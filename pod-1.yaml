@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-1
+spec:
+  containers:
+  - name: container-1
+    image: gcr.io/google-samples/hello-app:2.0
+    volumeMounts:
+    - name: mongodb-data
+      mountPath: /data/db
+  volumes:
+  - name: mongodb-data
+    persistentVolumeClaim:
+      claimName: mongodb-pvc2
