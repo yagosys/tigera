@@ -1,0 +1,6 @@
+apiVersion: projectcalico.org/v3
+kind: Tier
+metadata:
+  name: internal-access
+spec:
+  order: 100
