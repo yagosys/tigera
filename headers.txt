@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Date: Tue, 30 Jun 2020 09:19:49 GMT
+Server: Apache
+Set-Cookie: APSCOOKIE_9647256299488565365="Era%3D0%26Payload%3Dffgqdpk8E7PfCCO5htC2+9SlEeJFeGqKz%2FzRXuzbUsAotZuMFPMtfHU68RDOWgSq%0Aya0zM3HMn%2FW3vIzITcWVwQcW+hX1lpt70OVEKjuFGlgFAZBcyC0dzG2KL%2FbUzyqF%0AN4zzfC56YxHc3Zx5fgwdLsea1IyAwLaKaJk+teQMR0mBsEH8CtRjWUJy%2FgnbEIMB%0AFH4qJ4byKWJZsM3S7NNLuA%3D%3D%0A%26AuthHash%3D3QJsWFncPqYUqWOmvE8mASB56P4A%0A"; path=/; secure; HttpOnly; SameSite=Strict
+Set-Cookie: ccsrftoken_9647256299488565365="4E52AE41CA545F555179A444971DB"; path=/; secure; SameSite=Strict
+Set-Cookie: ccsrftoken="4E52AE41CA545F555179A444971DB"; path=/; secure; SameSite=Strict
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-XSS-Protection: 1; mode=block
+Strict-Transport-Security: max-age=15552000
+X-UA-Compatible: IE=Edge
+Content-Length: 94
+Content-Type: text/html
+

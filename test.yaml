@@ -1,0 +1,39 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: allow-tigera.tigera-firewall-controller-access
+  namespace: tigera-firewall-controller
+spec:
+  order: 1
+  tier: allow-tigera
+  selector: k8s-app == 'tigera-firewall-controller'
+  types:
+  - Ingress
+  - Egress
+  ingress:
+  - action: Deny
+  egress:
+  - action: Allow
+    protocol: TCP
+    source: {}
+    destination:
+      # This policy allows Firewall controller to communicate with kubernetes api server.
+      namespaceSelector: projectcalico.org/name == "default"
+      selector: (provider == "kubernetes" && component == "apiserver" && endpoints.projectcalico.org/serviceName == "kubernetes")
+      # By default, kubernetes api server listens on [6443, 443]. If Api server is customized to listen
+      # on different port, Include the port number below.
+      ports: [443, 6443]
+  - action: Allow
+    protocol: TCP
+    destination:
+      # This policy allows Firewall controller to communicate with external Fortigate firewall.
+      nets: ["0.0.0.0/0"]
+      ports:
+      - 443
+  - action: Allow
+    protocol: UDP
+    destination:
+      # This policy allows Firewall controller to communicate with kube-dns.
+      selector: k8s-app == "kube-dns"
+      ports:
+      - 53

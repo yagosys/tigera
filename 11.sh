@@ -1,0 +1,1 @@
+kubectl -n tigera-firewall-controller create configmap  tigera-firewall-controller --from-literal=tigera.firewall.policy.selector="projectcalico.org/tier == 'default'" --from-literal=tigera.firewall.addressSelection="node" --from-literal=tigera.firewall.host=10.170.0.30
